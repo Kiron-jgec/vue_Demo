@@ -65,6 +65,13 @@
       </div>
     </section>
  <loader v-if="loader"></loader>
+
+
+
+
+
+
+
     <!-- services section  -->
 
     <section>
@@ -83,6 +90,8 @@
         </div>
       </div>
     </section>
+
+
 
     <!-- man with smile face  -->
 
