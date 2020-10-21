@@ -12,6 +12,7 @@
             <span> CONTACT </span>
             <span> LOGIN </span>
             <span @click="showhideLoader" > {{loaderText}} </span>
+            <span @click="showhideLoader2"> {{loaderText2}} </span>
 
           </div>
         </nav>
@@ -65,7 +66,7 @@
       </div>
     </section>
  <loader v-if="loader"></loader>
-
+ <loader2 v-if="loader2"></loader2>
 
 
 
@@ -210,13 +211,16 @@
 </template>
 
 <script>
- import loader from "./loader"
+ import loader from "./loader";
+ import loader2 from "./loader2"
 export default {
   data() {
     return {
 
 loader:false,
-loaderText : "SHOW LOADER",
+loaderText : "SHOW LOADER-1",
+loader2:false,
+loaderText2 : "SHOW LOADER-2",
 
       servicesData: [
         {
@@ -254,7 +258,7 @@ loaderText : "SHOW LOADER",
     };
   },
   components:{
-      loader
+      loader,loader2
   },
   methods:{
 showhideLoader()
@@ -262,13 +266,28 @@ showhideLoader()
     if(this.loader==false)
     {
         this.loader=true;
-        this.loaderText= "HIDE LOADER" ;
+        this.loaderText= "HIDE LOADER-1" ;
 
     }
     else 
     {
         this.loader=false;
-        this.loaderText= "SHOW LOADER" ;
+        this.loaderText= "SHOW LOADER-1" ;
+
+    }
+},
+showhideLoader2()
+{
+    if(this.loader2==false)
+    {
+        this.loader2=true;
+        this.loaderText2= "HIDE LOADER-2" ;
+
+    }
+    else 
+    {
+        this.loader2=false;
+        this.loaderText2= "SHOW LOADER-2" ;
 
     }
 }
